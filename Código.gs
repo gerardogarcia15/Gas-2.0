@@ -1,4 +1,4 @@
-//SISTEMA DE INSCRIPCIÓN CIRCUITO INTERNACIONAL DE TENIS
+//SISTEMA DE INSCRIPCIÓN CIRCUITO INTERNACIONAL DE TENIS.
 
 function myFunction() { 
 }//Fin funcion
@@ -26,47 +26,49 @@ function enviarEmailDeFormulario(e) {
 	var asunto = "CONFIRMACION DE INSCRIPCION :" + nombre;
 
     // EmailBody es para aquellos dispositivos que no pueden representar HTML, es texto sin formato
-	var cuerpoEmail = " Enorabuena su inscripcion se ha completado correctamente. <i>" + timestamp + "</i>" + 
-					"<br/><br/>Los detalles de la inscripcion son: " +
-               "<br/><br/>NOMBRE:                 " + nombre + 
-					"<br/>APELLIDO:               " + apellido + 
-                    "<br/>SEXO:                   " + sexo + 
-                    "<br/>FECHA DE NACIMIENTO:    " + fechaNacimiento + 
-                    "<br/>DNI:                    " + dni + 
-                    "<br/>DIRECCION:              " + direccion + 
-                    "<br/>CIUDAD:                 " + ciudad + 
-                    "<br/>PROVINCIA:              " + provincia + 
-                    "<br/>CODIGO POSTAL:          " + codigoPostal + 
-                    "<br/>PAIS:                   " + pais + 
-                    "<br/>TELEFONO:               " + telefono + 
-                    "<br/>EMAIL:                  " + email + 
-					"<br/>CODIGO ATP:             " + codigoAtp +
-                    "<img src= http://www.gptcatennis.org/images/uploaded/AtpCertified.png >" ;
+	var cuerpoEmail =  " Enorabuena su inscripcion se ha completado correctamente. <i>" + timestamp + "</i>" + 
+                    "<img src= https://upload.wikimedia.org/wikipedia/commons/f/fe/L%C3%ADnea_horizontal_1.jpg >"+
+					"Los detalles de la inscripcion son: " +
+                    "<h4>NOMBRE:</h4>" + nombre + 
+					"<h4>APELLIDO:</h4>" + apellido + 
+                    "<h4>SEXO:</h4>" + sexo + 
+                    "<h4>FECHA DE NACIMIENTO:</h4>" + fechaNacimiento + 
+                    "<h4>DNI:</h4>" + dni + 
+                    "<h4>DIRECCION:</h4>" + direccion + 
+                    "<h4>CIUDAD:</h4>" + ciudad + 
+                    "<h4>PROVINCIA:</h4>" + provincia + 
+                    "<h4>CODIGO POSTAL:</h4>" + codigoPostal + 
+                    "<h4>PAIS:</h4>" + pais + 
+                    "<h4>TELEFONO:</h4>" + telefono + 
+                    "<h4>EMAIL:</h4>" + email + 
+					"<h4>CODIGO ATP:</h4>" + codigoAtp +
+                    "<img src= http://www.gptcatennis.org/images/uploaded/AtpCertified.png >";      
 	
 	// html es para aquellos dispositivos que puedan representar HTML
     // Hoy en día casi todos los dispositivos puedan representar HTML
 	var htmlBody =  " Enorabuena su inscripcion se ha completado correctamente. <i>" + timestamp + "</i>" + 
-					"<br/><br/>Los detalles de la inscripcion son: " +
-               "<br/><br/>NOMBRE:                 " + nombre + 
-					"<br/>APELLIDO:               " + apellido + 
-                    "<br/>SEXO:                   " + sexo + 
-                    "<br/>FECHA DE NACIMIENTO:    " + fechaNacimiento + 
-                    "<br/>DNI:                    " + dni + 
-                    "<br/>DIRECCION:              " + direccion + 
-                    "<br/>CIUDAD:                 " + ciudad + 
-                    "<br/>PROVINCIA:              " + provincia + 
-                    "<br/>CODIGO POSTAL:          " + codigoPostal + 
-                    "<br/>PAIS:                   " + pais + 
-                    "<br/>TELEFONO:               " + telefono + 
-                    "<br/>EMAIL:                  " + email + 
-					"<br/>CODIGO ATP:             " + codigoAtp +
-                    "<img src= http://www.gptcatennis.org/images/uploaded/AtpCertified.png >"   ;               
-	
+                    "<img src= https://upload.wikimedia.org/wikipedia/commons/f/fe/L%C3%ADnea_horizontal_1.jpg >"+
+					"Los detalles de la inscripcion son: " +
+                    "<h4>NOMBRE:</h4>" + nombre + 
+					"<h4>APELLIDO:</h4>" + apellido + 
+                    "<h4>SEXO:</h4>" + sexo + 
+                    "<h4>FECHA DE NACIMIENTO:</h4>" + fechaNacimiento + 
+                    "<h4>DNI:</h4>" + dni + 
+                    "<h4>DIRECCION:</h4>" + direccion + 
+                    "<h4>CIUDAD:</h4>" + ciudad + 
+                    "<h4>PROVINCIA:</h4>" + provincia + 
+                    "<h4>CODIGO POSTAL:</h4>" + codigoPostal + 
+                    "<h4>PAIS:</h4>" + pais + 
+                    "<h4>TELEFONO:</h4>" + telefono + 
+                    "<h4>EMAIL:</h4>" + email + 
+					"<h4>CODIGO ATP:</h4>" + codigoAtp +
+                    "<img src= http://www.gptcatennis.org/images/uploaded/AtpCertified.png >";    
+                    	
     // Más información para las opciones avanzadas Parámetros
 	// https://developers.google.com/apps-script/reference/mail/mail-app#sendEmail(String,String,String,Object)
 	var opcionesAvanzadas = { Nombre: "Formulario:   Gerardo Garcia", htmlBody: htmlBody };
 
 	// Esta instrucción se envía el correo electrónico
-	MailApp.sendEmail(email, asunto, cuerpoEmail, opcionesAvanzadas);
+	MailApp.sendEmail(email,asunto, cuerpoEmail, opcionesAvanzadas);
 
 }//fin funcion
