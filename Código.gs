@@ -1,5 +1,5 @@
 //SISTEMA DE INSCRIPCIÓN CIRCUITO INTERNACIONAL DE TENIS.
-
+-
 function myFunction() { 
 }//Fin funcion
 
@@ -20,7 +20,7 @@ function enviarEmailDeFormulario(e) {
     var pais = e.values[10];
     var telefono = e.values[11];
     var email = e.values[12];
-    var codigoAtp = e.values[13];
+    var codigoJugador = e.values[13];
 	
 	// El sunto del email
 	var asunto = "CONFIRMACION DE INSCRIPCION :" + nombre;
@@ -41,7 +41,7 @@ function enviarEmailDeFormulario(e) {
                     "<h4>PAIS:</h4>" + pais + 
                     "<h4>TELEFONO:</h4>" + telefono + 
                     "<h4>EMAIL:</h4>" + email + 
-					"<h4>CODIGO ATP:</h4>" + codigoAtp +
+					"<h4>CODIGO ATP:</h4>" + codigoJugador +
                     "<img src= http://www.gptcatennis.org/images/uploaded/AtpCertified.png >";      
 	
 	// html es para aquellos dispositivos que puedan representar HTML
@@ -61,7 +61,7 @@ function enviarEmailDeFormulario(e) {
                     "<h4>PAIS:</h4>" + pais + 
                     "<h4>TELEFONO:</h4>" + telefono + 
                     "<h4>EMAIL:</h4>" + email + 
-					"<h4>CODIGO ATP:</h4>" + codigoAtp +
+					"<h4>CODIGO ATP:</h4>" + codigoJugador +
                     "<img src= http://www.gptcatennis.org/images/uploaded/AtpCertified.png >";    
                     	
     // Más información para las opciones avanzadas Parámetros
@@ -72,3 +72,42 @@ function enviarEmailDeFormulario(e) {
 	MailApp.sendEmail(email,asunto, cuerpoEmail, opcionesAvanzadas);
 
 }//fin funcion
+
+
+
+//Recorrer los "Codigos Registrados" para comprobar si el codigo del jugador se encuentra registrado en la base de datos
+
+
+function compararCodigos(e) {
+
+var codigoJugador = e.values[13];
+var positivo =0;
+// La "spreadsheet" activa, desde cuyo menú se disparó el script
+var hojaDeCálculo = SpreadsheetApp.getActive();
+
+// La hoja llamada Hoja 1.
+var hoja1 = hojaDeCálculo.getSheetByName('CodigosJugadores');
+
+// El rango A5:B10, es decir, desde la fila 5 y la columna 1,
+// de 6 filas de alto y 2 columnas de ancho
+var codigoBaseDatos = hoja1.getRange('A1:A30');
+
+
+
+
+for (var x = 0  ;    x <   codigoBaseDatos.getValues().length   ; x++  ) {
+  for (var y=0; y <         codigoBaseDatos[x].getValues().length    ; y++) {
+   
+     if ( (codigoJugador) == (codigoBaseDatos[x][y].getValues())  ){
+                 MailApp.sendEmail("gerardogarcia.15@campuscamara.es","gerardogarcia.15@campuscamara.es","UFFFFFFFFFFF","MENOSSSSS MAL!! POCO A POCO");     
+     }//fin si
+  }//fin para
+}//fin para
+
+
+
+
+}//Fin funcion
+
+
+
